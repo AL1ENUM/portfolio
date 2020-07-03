@@ -1,11 +1,11 @@
 <html>
   <head>
-    <style>
+  <style type="text/css">
 body {
   color: black;
 }
 
-h1 {
+h3 {
   color: green;
 }
     </style>
