@@ -1,3 +1,3 @@
 #The webpage is under construction
 
-Alienum, here your credentials for github : QWxpZW51bSwgaGVyZSB5b3VyIGNyZWRlbnRpYWxzIGZvciBnaXRodWIgOiBkSEl3Ykd3Z09pQnViM1F1ZEc5a1lYa3VZbTk1
+QWxpZW51bSwgaGVyZSB5b3VyIGNyZWRlbnRpYWxzIGZvciBnaXRodWIgOiBkSEl3Ykd3Z09pQnViM1F1ZEc5a1lYa3VZbTk1
