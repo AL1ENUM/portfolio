@@ -9,12 +9,15 @@ title: Home
     <h2>Lazy tools</h2>
      <ul>
        <li>Gobuster<br><a>gobuster dir -k -u http://0.0.0.0 -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -x .php,.txt,.html</a></li>
+       <br>
        <li>Hydra<br>
          <a>hydra -l admin -P /usr/share/wordlists/rockyou.txt host.example.com http-post-form "/index.php:username=^USER^&password=^PASS^&Login=Login:Login Failed"</a>
        </li>
+       <br>
        <li>Nikto<br>
          <a>nikto -h 127.0.0.1 -Display V | grep 200</a>
        </li>
+       <br>
        <li>
          Ncrack<br>
          <a>ncrack -p 22 --user alien -P /usr/share/wordlists/rockyou.txt 127.0.0.1</a>
