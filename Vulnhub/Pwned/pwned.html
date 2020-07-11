@@ -6,40 +6,64 @@ title: Pwned Vulnhub
   <head>
   </head>
   <body>
+  <h3>Pwned, Vulnhub Writeup</h3>
  <div class="topnav">
   <p>
-   <h2><a>Port Scan</a></h2><br>
+   <h2>Port Scan</h2><br>
     <img src="sources/1.PNG"> 
    </p>
    <p>
-    <h2><a>Directory Scan</a></h2><br>
+    <h2>Directory Scan</h2><br>
     <img src="sources/dirscan1.PNG"> 
    </p>
   <p>
-    <h2><a>Found secret.dic</a></h2><br>
+    <h2>Found secret.dic</h2><br>
     <img src="sources/2.PNG"> 
    </p>
     <p>
-    <h2><a>More dirscan using secret.dic</a></h2><br>
+    <h2>Directory scan using secret.dic</h2><br>
     <img src="sources/3.PNG"><br>
-    I found the pwned.vuln
+    <label for="fname">I found the pwned.vuln</label><br>
     <img src="sources/4.PNG"> 
    </p>
  <p>
-    <h2><a>View page source</a></h2><br>
-    I found some credentials.<br> 
+    <h2>View page source</h2><br>
+    <label for="fname">I found some credentials</label><br> 
     <img src="sources/5.PNG"> 
    </p>
  <p>
-    <h2><a>FTP login</a></h2><br>
-    Found id_rsa and note.txt files<br>
+    <h2>FTP login</h2><br>
+<label for="fname">Found id_rsa and note.txt files</label><br>
     <img src="sources/6.PNG"> 
   </p>
  <p>
-    <h2><a>SSH login</a></h2><br>
-    Found user ariana and her id_rsa<br> 
+    <h2>SSH login</h2><br>
+    <label for="fname">Found user ariana and her id_rsa</label><br> 
     <img src="sources/7.PNG"><br> 
     <img src="sources/8.PNG">
+  </p>
+ <p>
+    <h2>Found user1.txt</h2><br>
+    <img src="sources/10.PNG"> 
+  </p>
+ <p>
+    <h2>Privesc to Selena</h2><br>
+    <img src="sources/11.PNG"><br> 
+    <img src="sources/12.PNG"><br>
+    <img src="sources/13.PNG"><br>
+    <img src="sources/13.1.PNG"><br>
+    <label for="fname">Found user2.txt</label>
+    <img src="sources/14.PNG"><br>
+  </p>
+ <p>
+    <h2>Privesc to Root (docker)</h2><br>
+    <label for="fname">I typed id and i saw that it runs docker. So, let's exploit it.</label><br>
+    <img src="sources/15.PNG"><br>
+    <img src="sources/16.PNG"><br>
+  </p>
+ <p>
+    <h2>Display root.txt</h2><br>
+    <img src="sources/17.PNG"><br>
   </p>
 </div> 
   </body>
