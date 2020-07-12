@@ -14,24 +14,26 @@ title: Home
   </div> 
     <h2>Lazy tools</h2>
      <ul>
-       <li>Nmap<br>
+       <li>Nmap | Port scan<br>
          1.<a>nmap 127.0.0.1 -p 0-65535</a>
          2.<a>nmap -A -O -sS 127.0.0.1</a> 
        </li>
        <br>
-       <li>Gobuster<br><a>gobuster dir -k -u http://0.0.0.0 -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -x .php,.txt,.html</a></li>
+       <li>Gobuster | Dir scan<br><a>gobuster dir -k -u http://0.0.0.0 -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -x .php,.txt,.html</a></li>
        <br>
-       <li>Hydra<br>
+       <li>Hydra | Brute force<br>
          <a>hydra -l admin -P /usr/share/wordlists/rockyou.txt host.example.com http-post-form "/index.php:username=^USER^&password=^PASS^&Login=Login:Login Failed"</a>
        </li>
        <br>
-       <li>Nikto<br>
+       <li>Nikto | Webapp analysis<br>
          <a>nikto -h 127.0.0.1 -Display V | grep 200</a>
        </li>
        <br>
-       <li>
-         Ncrack<br>
+       <li>Ncrack | SSH brute force<br>
          <a>ncrack -p 22 --user alien -P /usr/share/wordlists/rockyou.txt 127.0.0.1</a>
+       </li>
+       <li>ffuf | Subdomain scan<br>
+         <a>ffuf -c -w /usr/share/amass/wordlists/subdomains-top1mil-110000.txt -u http://example.com/ -H "Host: FUZZ.example.com" -fs 185</a>
        </li>
     </ul> 
   </body>
