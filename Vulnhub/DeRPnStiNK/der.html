@@ -1,0 +1,74 @@
+---
+layout: default
+title: DeRPnStiNK Vulnhub
+---
+<html>
+  <head>
+  </head>
+  <body>
+  <header>
+  <h1>DeRPnStiNK, Vulnhub Writeup</h1>
+  <p>Posted by Alienum</p>
+  </header> 
+ <div class="topnav">
+  <p>
+   <h2>Port Scan</h2><br>
+    <img src="sources/1.PNG"> 
+   </p>
+   <p>
+    <h2>Directory scan, found /weblog</h2><br>
+    <img src="sources/2.PNG"> 
+   </p>
+  <p>
+    <h2>Redirection to derpnstink.local & update /etc/hosts</h2><br>
+    <img src="sources/3.PNG"><br> 
+    <img src="sources/31.PNG"><br> 
+    <img src="sources/32.PNG"><br> 
+    <img src="sources/33.PNG">
+   </p>
+    <p>
+    <h2>Wordpress login | admin:admin </h2><br>
+    <img src="sources/4.PNG"><br>
+    <img src="sources/5.PNG"><br>
+    <h2>Upload reverse shell</h2><br>
+    <img src="sources/61.PNG">
+   </p>
+ <p>
+    <h2>Shell spawned</h2><br>
+    <img src="sources/7.PNG"><br>
+  </p>
+  <p>
+    <h2>Found root password for phpmyadmin</h2><br>
+    <img src="sources/8.PNG"><br> 
+    <img src="sources/9.PNG"><br>
+    <h1>Found unclestinky password hash, let's crack it</h1><br>
+    <img src="sources/10.PNG"><br>
+    <img src="sources/11.PNG"><br>
+    <h1>FTP login | stinky:wedgie57</h1><br>
+    <img src="sources/12.PNG">
+   </p>
+   <p>
+    <h2>Found key.txt and derpissues.txt</h2><br>
+    <img src="sources/13.PNG"><br>
+    <img src="sources/14.PNG"><br>
+    <h2>The key.txt is stinky's private key for SSH</h2><br>
+    <img src="sources/15.PNG">
+   </p>
+    <p>
+    <h2>Found flag.txt</h2><br>
+    <img src="sources/16.PNG"><br>
+    <h2>Found pcap file in stinky's Documents, let's analyze it using wireshark</h2><br>
+    <img src="sources/17.PNG"><br>
+    <h2>After a long time i found that derp send POST requests with his credentials</h2><br>
+    <img src="sources/18.PNG"><br>
+    <h2>SSH Login</h2><br>
+    <img src="sources/19.PNG"><br>
+    <h2>Privesc to Root</h2><br>
+    <img src="sources/21.PNG"><br>
+    <h2>Root flag</h2><br>
+    <img src="sources/22.PNG"><br>
+   </p>
+</div> 
+  </body>
+</html>
+
