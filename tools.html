@@ -2,10 +2,6 @@
 layout: default
 title: Home
 ---
-<html>
-  <head>
-  </head>
-  <body>
   <div class="topnav">
   <a class="active" href="index.html">Home</a>
   <a href="tools.html">Tools</a>
@@ -34,8 +30,8 @@ title: Home
        </li>
        <br>
        <li>ffuf | Subdomain scan<br>
-         <a>ffuf -c -w /usr/share/amass/wordlists/subdomains-top1mil-110000.txt -u http://example.com/ -H "Host: FUZZ.example.com" -fs 185</a>
+         1. <a>ffuf -c -w /usr/share/amass/wordlists/subdomains-top1mil-110000.txt -u http://example.com/ -H "Host: FUZZ.example.com" -fs 185</a><br>
+         2. <a>dig axfr example.com  @127.0.0.1</a>
        </li>
+       
     </ul> 
-  </body>
-</html>
