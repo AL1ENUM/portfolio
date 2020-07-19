@@ -8,29 +8,24 @@ title: OSCP Vulnhub
 </header>
 <div>
 <h2>Port Scan</h2><br>
-<img src="sources/1.PNG">
-</div>
-<div>
-<h2>Port Scan</h2><br>
-<label>NMAP found 2 files : robots.txt & secret.txt</label>
+<label><a>NMAP found 2 files : robots.txt & secret.txt</a></label>
 <img src="sources/1.PNG"><br>
-<label>The secret.txt contains a private key with base64 encode</label><br>
+<label><a>The secret.txt contains a private key with base64 encode</a></label><br>
 <img src="sources/2.PNG"><br>
-<label>Decode the base64 file</label><br>
+<label><a>Decode the base64 file</a></label><br>
 <img src="sources/3.PNG"><br>
-<label>We found the username : oscp</label><br>
+<label><a>We found the username : oscp</a></label><br>
 <img src="sources/4.PNG"><br>
-<label>SSH login using the private key & username oscp</label><br>
+<label><a>SSH login using the private key & username oscp</a></label><br>
 <img src="sources/5.PNG"><br>
-<label>After login as oscp, let's enum for SUID permissions</label><br>
-<code>find / -perm -u=s -type f 2>/dev/null</code><br>
-<label>After a conversation with a discord friend, we found that the better choice was /usr/bin/bash</label><br>
+<label><a>After login as oscp, let's enum for SUID permissions</a></label><br>
+<label><a>find / -perm -u=s -type f 2>/dev/null</a></label><br>
+<label><a>After a conversation with a discord friend, we found that the better choice was /usr/bin/bash</a></label><br>
 <img src="sources/11.PNG"><br>
-<label>Let's search GTFOBins</label><br>
+<label><a>Let's search GTFOBins</a></label><br>
 <img src="sources/12.PNG"><br>
-<label>Instead of ./bash -p, we need to use the full path. Just type :</label><br>
-<code>/usr/bin/bash -p</code><br>
+<label><a>Instead of ./bash -p, we need to use the full path. Just type : <br> /usr/bin/bash -p</a></label><br>
 <img src="sources/13.PNG"><br>
-<label>End</label>
+<label><a>End</a></label>
 </div>
 
