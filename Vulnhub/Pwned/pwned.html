@@ -2,64 +2,44 @@
 layout: default
 title: Pwned Vulnhub
 ---
-<html>
-  <head>
-  </head>
-  <body>
-  <header>
+<div class="topnav">
+  <a class="active" href="index.html">Home</a>
+  <a href="tools.html">Tools</a>
+  <a href="vulnhub.html">Vulnhub</a>
+  <a href="about.html">About</a>
+</div> 
+<header>
   <h1>Pwned: 1, Vulnhub Writeup</h1>
   <p>Posted by Alienum</p>
-  </header> 
- <div class="topnav">
-  <p>
+</header> 
+ <div>
    <h2>Port Scan</h2><br>
-    <img src="sources/1.PNG"> 
-   </p>
-   <p>
+    <img src="sources/1.PNG"><br>
     <h2>Directory Scan</h2><br>
-    <img src="sources/dirscan1.PNG"> 
-   </p>
-  <p>
+    <img src="sources/dirscan1.PNG"><br>
     <h2>Found secret.dic</h2><br>
-    <img src="sources/2.PNG"> 
-   </p>
-    <p>
+    <img src="sources/2.PNG"><br> 
     <h2>Directory scan using secret.dic, found the pwned.vuln</h2><br>
     <img src="sources/3.PNG"><br>
-    <img src="sources/4.PNG"> 
-   </p>
- <p>
+    <img src="sources/4.PNG"><br> 
     <h2>View page source, found credentials ftpuser:B0ss_B!TcH </h2><br> 
-    <img src="sources/5.PNG"> 
-   </p>
- <p>
+    <img src="sources/5.PNG"><br> 
     <h2>FTP login, found id_rsa and note.txt files</h2><br>
     <img src="sources/6.PNG"><br>
     <h2>Found user ariana and her id_rsa</h2><br>
     <img src="sources/7.PNG"><br> 
-    <img src="sources/8.PNG">
-  </p>
- <p>
+    <img src="sources/8.PNG"><br>
     <h2>SSH Login, found user1.txt</h2><br>
-    <img src="sources/10.PNG"> 
-  </p>
- <p>
+    <img src="sources/10.PNG"> <br>
     <h2>Privesc to Selena (user2.txt)</h2><br>
     <img src="sources/11.PNG"><br> 
     <img src="sources/12.PNG"><br>
     <img src="sources/13.PNG"><br>
     <img src="sources/13.1.PNG"><br>
-    <img src="sources/14.PNG">
-  </p>
- <p>
+    <img src="sources/14.PNG"><br>
     <h2>Privesc to Root (docker)</h2><br>
     <label for="fname">I typed id and i saw that it runs docker. So, let's exploit it.</label><br>
-    <img src="sources/15.PNG">
-  </p>
- <p>
+    <img src="sources/15.PNG"><br>
     <h2>Display root.txt</h2><br>
     <img src="sources/17.PNG"><br>
-  </p>
 </div> 
-  </body>
-</html>
