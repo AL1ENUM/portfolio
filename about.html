@@ -1,23 +1,266 @@
----
-layout: default
-title: Home
----
-<code>
-<a>root@kali~#</a> whoami<br>
-alienum<br>
-<a>root@kali~#</a> chmod +x alien.sh<br>
-<a>root@kali~#</a> ./alien.sh<br>
-[+] loading......... <br>
-[+] Earth Hacked....<br>
-[+] time : 0.01 seconds<br>
-[+] Shell spawned<br>
-<a>earth@galaxy~#</a> whoami<br>
-earth<br>
-<a>earth@galaxy~#</a>sudo apt-get install UFOs<br>
-UFOs successfully installed in 0.001 seconds<br>
-<a>earth@galaxy~#</a>sudo UFOs --destroy 127.0.0.1 --verbose<br>
-[+] loading......... <br>
-[+] Remaining population 50%<br>
-[!] Remaining population 2% <br>
-[*] <h1>EARTH IS DOWN<h1>
-</code>
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<title>About</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body{
+background-color: #1b1b1e;
+background-image: url('earth.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;  
+background-size: 100% 100%;
+}
+
+img {
+  border-style: solid;
+  border-color: lightgreen;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:150px;
+}
+
+h1{
+  color: #4CAF50;
+}
+
+.column1 h1 {
+ color: green;
+ text-align:center;
+}
+
+h2 {
+  color: #4CAF50;
+  text-align: justify;
+  letter-spacing: 3px;
+}
+
+.about{
+  margin: 20px 110px;
+  font-size: 15px;
+ }
+
+.row{
+ position:absolute; 
+ top:0; 
+ bottom:0;
+ display: -webkit-flex;
+ display: flex;
+}
+
+.col{
+ max-width: 27%;
+}
+
+.column1 .inf{
+ color:#808080; 
+ text-align:center;
+}
+
+.btn-circle {
+  height: 47px;
+  width: 47px;
+  padding: 6px 0px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+
+footer{
+  position: fixed;
+  bottom:0;
+}
+
+.social{
+	position: fixed;
+	bottom: 0;
+	left: 20px;
+}
+
+
+<!------------------menu-------------------->
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav .icon {
+  display: none;
+}
+.topnav a:hover{
+  background-color: #555;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .topnav a:not(:first-child){
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  img{
+   max-width:75px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+
+.col-12{
+background-image: url('earth.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;  
+background-size: 100% 100%;
+max-width:100%;
+}
+ 
+.column1 h1, .inf p{
+ text-align:center;
+}
+  
+.col{
+   max-width: 100%;
+ }
+ 
+ .about{
+   margin: 0px 90px;
+ }
+ 
+ .about a,  h2, .about h1{
+  font-size: 20px;
+ }
+ 
+ footer{
+  position: fixed;
+}
+
+.social{
+	position: fixed;
+	top: 20px;
+	left: 75%;
+}
+ 
+}
+</style>
+	</HEAD>
+	<BODY>	
+		<div class="row">
+			<div class="col" style="background-color:#222225;">
+				<div class="column1" style="padding-top:20px">
+					<img class="img-fluid" src="alienaki.jfif" alt="Avatar"/>
+					<h1><b> Alienaki </h1>
+					<div class="inf">
+					<p class="font-weight-light">Developer | NetSec noob| Try to write writeups</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12">
+				<nav class="navbar navbar-expand-lg">
+					<div class="topnav" id="myTopnav">
+						<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="tools.html">Tools</a>
+						<a class="nav-link" href="vulnhub.html">Vulnhub</a>
+						<a class="nav-link" href="about.html">About</a>
+						<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+					</div>					
+				</nav>
+				<hr>
+				<div class="about">
+				<h2>Little stuff about me..</h2><br>	
+						<a style="color:#FD0606;">root@kali~#</a> <a style="color:#7AE188;">whoami</a><br>
+						<a style="color:#FD0606;">alienum<br></a>
+						<a style="color:#FD0606;">root@kali~# </a><a style="color:#7AE188;">chmod +x alien.sh</a><br>
+						<a style="color:#FD0606;">root@kali~#</a><a style="color:#7AE188;"> ./alien.sh</a><br>
+						<a style="color:#FD0606;">[+] loading......... <br>
+						[+] Earth Hacked....<br>
+						[+] time : 0.01 seconds<br>
+						[+] Shell spawned<br>
+						earth@galaxy~# </a> <a style="color:#7AE188;">whoami</a><br>
+						<a style="color:#FD0606;">earth<br>
+						earth@galaxy~#</a> <a style="color:#7AE188;"> sudo apt-get install UFOs</a><br>
+						<a style="color:#FD0606;">UFOs successfully installed in 0.001 seconds<br>
+						earth@galaxy~#</a><a style="color:#7AE188;"> sudo UFOs --destroy 127.0.0.1 --verbose</a><br>
+						<a style="color:#FD0606;">[+] loading......... <br>
+						[+] Remaining population 50%<br>
+						[!] Remaining population 2% </a><br>
+						</a><br>
+						<h1>[*] EARTH IS DOWN</h1>
+				</div>
+				
+			</div>
+		</div>
+			<footer>
+				<div class="social">
+					<a  href="https://github.com/alienaki">
+					<img class="btn btn-circle" src="github.jpg" >
+					</a>
+					<a  href="https://twitter.com/AL1ENUM">
+					<img  class="btn btn-circle" src="twitter.jpg" >
+					</a>
+					<a  href="https://www.hackthebox.eu/profile/314167">
+					<img  class="btn btn-circle" src="htb.jpg" >
+					</a>
+					<a  href="https://tryhackme.com/p/aeriko">
+					<img  class="btn btn-circle" src="THM.png" >
+					</a>
+					<br><br/>
+				</div>
+				
+			</footer>
+			
+		<script>
+			function myFunction() {
+			  var x = document.getElementById("myTopnav");
+			  if (x.className === "topnav") {
+				x.className += " responsive";
+			  } else {
+				x.className = "topnav";
+			  }
+			}
+		</script>
+	
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	</BODY>
+</HTML>
