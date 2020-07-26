@@ -15,18 +15,30 @@
 
 body{
 background-color: #1b1b1e;
-color:green;
 }
 
 li a{
 color:#808080;
 }
 
-h1 {
- color: green;
- text-align:center;
+p{
+color: green;
 }
-	
+
+h1, h2 {
+ color: green;
+}
+
+.tools h1 ,h2{
+ padding-left: 50px;
+ font-size: 20px;
+}
+
+.tools image{
+ width: 500px;
+ height: 300px;
+}
+
 .btn-circle {
   height: 47px;
   width: 47px;
@@ -38,13 +50,16 @@ h1 {
 
 .footer{
   position: fixed;
-  bottom:0;
 }
 
 .social{
 	position: fixed; 
 	bottom:0;
 	left: 20px;
+}
+
+header{
+text-align:center;
 }
 <!------------------menu-------------------->
 .topnav {
@@ -99,22 +114,8 @@ h1 {
  padding:absolute;
  }
  
- .col {
-    max-width:100%;
- }
- 
- .column1 h1, .inf p{
-	text-align:center;
- }
-  
  .col-12 {
    max-width: 100%;
- }
- .start{
-   margin: 50% 40px;
- }
- h3 ,.start p{
-  font-size: 20px;
  }
  
  footer{
@@ -141,7 +142,7 @@ h1 {
 				<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 			</div>					
 		</nav>
-          	<header>
+         <header>
 		  <h1>CyberSploit, Vulnhub Writeup</h1>
 		  <p>Posted by Alienum</p>
 		</header> 
@@ -179,6 +180,7 @@ h1 {
 		    <img src="sources/7.PNG"><br>
 		    <h1>Root</h1><br>
 		    <img src="sources/8.PNG">
+			<br><br><br>
 		</div> 
 		<footer>
 			<div class="social">
@@ -195,8 +197,7 @@ h1 {
 				<img  class="btn btn-circle" src="../../src/THM.png" >
 				</a>
 				<br><br/>
-			</div>
-				
+			</div>				
 		<footer>
 		
 		<script>
