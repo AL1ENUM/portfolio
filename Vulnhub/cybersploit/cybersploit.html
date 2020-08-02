@@ -14,19 +14,12 @@
 }
 
 body{
-background-color: #1b1b1e;
+background-color: rgba(0, 0, 0, 0.9);
+width: 95%;
 }
 
-li a{
+li a, p, h1, h2{
 color:#808080;
-}
-
-p{
-color: green;
-}
-
-h1, h2 {
- color: green;
 }
 
 .tools h1 ,h2{
@@ -84,56 +77,38 @@ text-align:center;
   color: white;
 }
 
-@media screen and (max-width: 768px) {
-  .topnav a:not(:first-child){
-    display: none;
-  }
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
+.gallery img {
+  position: relative;
+  float:center;
+  background-attachment: fixed;  
+  box-shadow: 0 4px 8px 0 rgba(99, 173, 118, 0.2), 0 6px 20px 0 rgba(99, 173, 118, 0.9);
+  left: 5%;
 }
 
-@media screen and (max-width: 768px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
+.desc {
+  padding: 15px;
+  font-size: 20px;
+  color:#808080;
+  text-align: left;
+}
+
+pre {
+	background: rgba(0, 0, 0, 0.9);
+	border: 10px outset rgba(27, 27, 30, 1);
+	padding: 10px;
+	font-size: 16px;
+	color: #aa759f;
+	border-radius: 2px;
+	text-wrap: normal;
+	overflow: auto;
+	overflow-y: hidden;
 }
 
 
-@media only screen and (max-width: 1024px) {
-
- .row{
- padding:absolute;
- }
- 
- .col-12 {
-   max-width: 100%;
- }
- 
- footer{
-  position: fixed;
-}
-
-.social{
-	position: fixed;
-	top: 20px;
-	left: 75%;
-}
-}
   </style>
 	</HEAD>
 	<BODY>	
-	<div class="row">
-		<div class="col-12">
+
 		<nav class="navbar navbar-expand-lg">
 			<div class="topnav" id="myTopnav">
 				<a class="nav-link" href="../../index.html">Home <span class="sr-only">(current)</span></a>
@@ -143,44 +118,45 @@ text-align:center;
 				<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 			</div>					
 		</nav>
+		
          <header>
 		  <h1>CyberSploit, Vulnhub Writeup</h1>
 		  <p>Posted by Alienum</p>
-		</header> 
-		<div class="tools">
+		</header>
+		
+		<div class="gallery">
 		  <p>
-		   <h2>Port Scan</h2><br>
-		    <img src="sources/1.PNG" style="width:500px; height: 300px;"> 
+		   <div class="desc">Port Scan</div><br>
+		    <img src="sources/1.PNG" style="width:550px; height: 350px;"> 
 		   </p>
 		   <p>
-		    <h2>Enumeration</h2><br>
+		    <div class="desc">Enumeration</div><br>
 		    <img src="sources/2.PNG" style="width:520px; height: 350px;"> 
 		   </p>
 		  <p>
-		    <h2>Found username : itsskv</h2><br>
-		    <img src="sources/3.PNG" style="width:600px; height: 360px;"> 
+		    <div class="desc">Found username : itsskv</div><br>
+		    <img src="sources/3.PNG" style="width:850px; height: 650px;"> 
 		   </p>
 		    <p>
-		    <h2>Directory scan, found robots.txt</h2><br>
-		    <img src="sources/4.PNG" style="width:550px; height: 320px;"><br/><br/>
-		    <img src="sources/41.PNG" style="width:500px; height: 300px;"><br>
-		    <h2>Decode the hash, found the first flag</h2><br>
-		    <h2>SSH login, credentials -> itsskv:cybersploit{youtube.com/c/cybersploit}</h2><br>
-		    <img src="sources/42.PNG" style="width:650px; height: 450px;">
+		    <div class="desc">Directory scan, found robots.txt</div><br>
+		    <img src="sources/4.PNG" style="width:800px; height: 360px;"><br><br><br>
+		    <img src="sources/41.PNG" style="width:600px; height: 250px;"><br><br>
+		    <div class="desc">Decode the hash, found the first flag <br>
+		    SSH login, credentials -> itsskv:cybersploit{youtube.com/c/cybersploit}</div><br>
+		    <img src="sources/42.PNG" style="width:1100px; height: 550px;">
 		   </p>
 		 <p>
-		    <h2>Found the second flag | binary to text</h2><br>
-		    <img src="sources/5.PNG" style="width:520px; height: 320px;"><br>
+		    <div class="desc">Found the second flag | binary to text</div><br>
+		    <img src="sources/5.PNG" style="width:720px; height: 450px;"><br>
 		  </p>
-		    <h2>Privesc to Root</h2><br>
-		    <h1>uname -a</h1><br>
-		    <img src="sources/6.PNG" style="width:450px; height: 320px;"><br> 
-		    <h1>searchsploit</h1><br>
-		    <img src="sources/61.PNG" style="width:600px; height: 350px;"><br>
-		    <h1>Send the script to the target machine</h1><br>
-		    <img src="sources/7.PNG" style="width:500px; height: 300px;"><br>
-		    <h1>Root</h1><br>
-		    <img src="sources/8.PNG" style="width:600px; height: 450px;">
+		    <div class="desc">Privesc to Root<br>uname -a</div><br>
+		    <img src="sources/6.PNG" style="width:800px; height: 220px;"><br> 
+		    <div class="desc">searchsploit</div><br>
+		    <img src="sources/61.PNG" style="width:1000px; height: 400px;"><br>
+		    <div class="desc">Send the script to the target machine</div><br>
+		    <img src="sources/7.PNG" style="width:500px; height: 200px;"><br>
+		    <div class="desc">Root</div><br>
+		    <img src="sources/8.PNG" style="width:1000px; height: 700px;">
 			<br><br><br>
 		</div> 
 		<footer>
