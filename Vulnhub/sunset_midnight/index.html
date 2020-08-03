@@ -248,7 +248,7 @@ MariaDB [wordpress_db]> select * from wp_users;
 |  1 | admin      | $P$BaWk4oeAmrdn453hR6O6BvDqoF9yy6/ | admin         | example@example.com | http://sunset-midnight | 2020-07-16 19:10:47 |                     |           0 | admin        |
 +----+------------+------------------------------------+---------------+---------------------+------------------------+---------------------+---------------------+-------------+--------------+
 
-pdate wp_users set user_pass='$2y$12$Lnpe6P3puw1qNXeQLetw5uYg7PhsD7tfpU4JKsvTOTgYztRuk3mZK' where user_login='admin';
+MariaDB [wordpress_db]> update wp_users set user_pass='$2y$12$Lnpe6P3puw1qNXeQLetw5uYg7PhsD7tfpU4JKsvTOTgYztRuk3mZK' where user_login='admin';
 Query OK, 1 row affected (0.436 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
