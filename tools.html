@@ -3,121 +3,31 @@
 <HEAD>
 <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="static/style.css">
 
 <title>Tools</title>
 <style>
-* {
-  box-sizing: border-box;
-}
-
-body{
-background-color: #1b1b1e;
-}
 
 h2 {
-color: #4CAF50;
-  text-align: justify;
-  letter-spacing: 3px;
-}
-
-.tools li {
-color: lightgreen;
-}
-
-li p{
-color: white;
-}
-
-h1 {
- color: green;
- text-align:center;
-}
-
-img {
-  border-style: solid;
-  border-color: lightgreen;
-  border-radius: 50%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-li a{
-color:#808080;
-}
-
-h3 {
   color: #4CAF50;
   text-align: justify;
   letter-spacing: 3px;
 }
 
-.tools{
-  margin: 20px 0px;
-  font-size: 12px;
- 
+.tools li {
+padding-left: 240px;
+color: lightgreen;
+font-size: 15px;
 }
 
-.row{
- position:absolute; 
- top:0; 
- bottom:0;
- display: -webkit-flex;
- display: flex;
-}
-
-.col{
- max-width: 23%;
-}
-
-.column1 .inf{
- color:#808080; 
- text-align:center;
-}
-
-.btn-circle {
-  height: 47px;
-  width: 47px;
-  padding: 6px 0px;
-  font-size: 18px;
-  line-height: 1.33;
-  border-radius: 25px;
-}
-
-footer{
-  position: fixed;
-  bottom:0;
-}
-
-.social{
-	position: fixed;
-	bottom: 0;
-	left: 20px;
-}
-<!------------------menu-------------------->
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-.topnav .icon {
-  display: none;
-}
-.topnav a:hover{
-  background-color: #555;
+li p{
+  padding-left: 20px;
   color: white;
+  font-size: 15px;
 }
 
 @media screen and (max-width: 768px) {
@@ -144,66 +54,24 @@ footer{
   }
 }
 
-@media only screen and (max-width: 1024px) {
-
- .row{
- padding:absolute;
- }
- 
- .col {
-    max-width:100%;
- }
- 
- .column1 h1, .inf p{
-	text-align:center;
- }
-  
- .col-12 {
-   max-width: 100%;
- }
- 
- .tools{
-   margin: 0px 10px;
- }
- 
- .tools p, li{
-  font-size: 20px;
- }
- 
- footer{
-  position: fixed;
-}
-
-.social{
-	position: fixed;
-	top: 20px;
-	left: 70%;
-}
- 
-}
 </style>
 	</HEAD>
-	<BODY>	
-		<div class="row">
-			<div class="col" style="background-color:#222225;">
-				<div class="column1" style="padding-top:20px">
-					<img class="img-fluid" src="src/alienaki.jfif" alt="Avatar" style="width:150px;"/>
-					<h1><b> Alienaki </h1>
-					<div class="inf">
-					<p class="font-weight-light">Developer | NetSec noob| Try to write writeups</p>
-					</div>
+	<BODY onload="startTime()">		
+
+			<div class="sidenav">
+				<img class="img-fluid" src="src/alienaki.jfif" alt="Avatar" style="width:150px;"/>
+				<h1><b> Alienaki </h1>
+				<div class="inf">
+				<p class="font-weight-light">Developer | NetSec | CyberSec</p>
 				</div>
-			</div>
-			<div class="col-12">
-				<nav class="navbar navbar-expand-lg">
-					<div class="topnav" id="myTopnav">
-								<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-								<a class="nav-link" href="tools.html">Tools</a>
-								<a class="nav-link" href="vulnhub.html">Vulnhub</a>
-								<a class="nav-link" href="about.html">About</a>
-								<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-					</div>					
-				</nav>
+				
+				<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="tools.html">Tools</a>
+				<a class="nav-link" href="vulnhub.html">Vulnhub</a>
+				<a class="nav-link" href="about.html">About</a>				
+			</div>	
+			
+			<div class="main">
 				<div class="tools">
 				<h2>Lazy tools</h2>
 				<br>
@@ -232,45 +100,40 @@ footer{
 					 <p>ffuf -c -w /usr/share/amass/wordlists/subdomains-top1mil-110000.txt -u http://example.com/ -H "Host: FUZZ.example.com" -fs 185</p>
 				   </li>
 				</ul> 
-				</div>
-				
+				</div>				
 			</div>
-		</div>
-			<footer>
-				<div class="social">
+			
+			<div class="rsidebar">			
+				<div class="curinf">
+					<p id="tim"></p>
+					<p id="day"></p>				
+					</div>
+					<div class="social">
 					<a  href="https://github.com/alienaki">
-					<img class="btn btn-circle" src="src/github.jpg" >
+					<img class="btn btn-circle" src="src/github.png" >
 					</a>
 					<a  href="https://twitter.com/AL1ENUM">
-					<img  class="btn btn-circle" src="src/twitter.jpg" >
+					<img  class="btn btn-circle" src="src/twitter.png" >
 					</a>
 					<a  href="https://www.hackthebox.eu/profile/314167">
-					<img  class="btn btn-circle" src="src/htb.jpg" >
+					<img  class="btn btn-circle" src="src/htb.png" >
 					</a>
 					<a  href="https://tryhackme.com/p/aeriko">
-					<img  class="btn btn-circle" src="src/THM.png" >
+					<img  class="btn btn-circle" src="src/THM.jpg" >
 					</a>
-					<br><br/>
 				</div>
-				
+			</div>
+			
+			<footer class="footer">
+			<br><br>
+				<p>Designed & Built by <a href="https://twitter.com/5TUK45"> @Stukas</a> | Writeups by <a  href="https://twitter.com/AL1ENUM">@Alienum</a> </p>
 			</footer>
-		
-		<script>
-			function myFunction() {
-			  var x = document.getElementById("myTopnav");
-			  if (x.className === "topnav") {
-				x.className += " responsive";
-			  } else {
-				x.className = "topnav";
-			  }
-			}
-		</script>
-	
-	<!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+			
+			<script src="script.js"></script>
+			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+		
 	</BODY>
 </HTML>
