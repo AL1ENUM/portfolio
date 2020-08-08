@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+ background-color: #1b1b1e;
+ font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:#222225;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 70px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  height: 100%;
+  width: auto;
+  margin-left: auto; /* Same as the width of the sidenav */
+  margin-right: auto;
+}
+.sidenav img {
+  border-style: solid;
+  border-color: lightgreen;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+ color:  #aa759f;
+ text-align:center;
+}
+
+.sidenav .inf{
+ color:#808080; 
+ text-align:center;
+}
+
+.btn-circle {
+  height: 45px;
+  width: 40px;
+  padding: 6px 0px;
+  border-radius: 50%;
+}
+
+.gallery img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px 0 rgba(99, 173, 118, 0.2), 0 6px 20px 0 rgba(99, 173, 118, 0.9);
+}
+
+.curinf {
+  padding: 20px;
+}
+
+.curinf p{
+  font-family:'Courier New';
+  color:green;
+  text-align: center;
+}
+
+.rsidebar{
+   height:100%;
+   position:fixed;
+   right:0px;
+   bottom:0px;
+   width: 350px;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+}
+
+.desc {
+  padding: 15px;
+  font-size: 20px;
+  color:green;
+  text-align: center;
+}
+
+.footer {
+   width: 100%;
+}
+
+.footer p{
+	text-align:center;
+	color: #646464;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+@media only screen and (max-width: 1024px) {
+
+ .column1 h1, .inf p{
+	text-align:center;
+ }
+  
+}
