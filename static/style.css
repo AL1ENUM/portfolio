@@ -108,16 +108,41 @@ h1 {
 	text-align:center;
 	color: #646464;
 }
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+.topnav .icon{
+	display:none;
 }
-
-@media only screen and (max-width: 1024px) {
-
- .column1 h1, .inf p{
-	text-align:center;
- }
+@media screen and (max-width: 1024px) {
+  .sidenav{
+	position:relative;
+	top:0;
+	width: 100%;
+  }
+  .rsidebar{
+	position:relative;
+	bottom:10px;
+	width: 100%;
+  }	
+  .first {font-size: 15px;}
+  .first h1{font-size: 25px;}
+  .img-fluid{width: 75px;}
+  .topnav a {display: none;}
+  .topnav a.icon {
+	float: right;
+	display: block;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+	position: absolute;
+	right: 0;
+	top: 0;
+  }
+  .topnav.responsive a {
+	float: none;
+	display: block;
+	text-align: left;
+	font-size: 15px;
+  }  
+}
   
-}
