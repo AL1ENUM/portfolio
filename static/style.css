@@ -7,6 +7,10 @@ body{
  font-family: "Lato", sans-serif;
 }
 
+.img-fluid{
+  width: 140px;
+}
+
 .sidenav {
   height: 100%;
   width: 200px;
@@ -108,9 +112,11 @@ h1 {
 	text-align:center;
 	color: #646464;
 }
+
 .topnav .icon{
 	display:none;
 }
+
 @media screen and (max-width: 1024px) {
   .sidenav{
 	position:relative;
