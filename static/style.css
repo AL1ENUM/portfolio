@@ -8,7 +8,7 @@ body{
 }
 
 .img-fluid{
-  width: 140px;
+	width: 140px;
 }
 
 .sidenav {
@@ -89,7 +89,7 @@ h1 {
    position:fixed;
    right:0px;
    bottom:0px;
-   width: 350px;
+   width: 300px;
 }
 
 .social {
@@ -105,12 +105,17 @@ h1 {
 }
 
 .footer {
+   bottom:0;
    width: 100%;
 }
 
 .footer p{
 	text-align:center;
 	color: #646464;
+}
+
+.footer a{
+	color:  #aa759f;
 }
 
 .topnav .icon{
@@ -125,12 +130,12 @@ h1 {
   }
   .rsidebar{
 	position:relative;
-	bottom:10px;
+	bottom: 10px;
 	width: 100%;
   }	
   .first {font-size: 15px;}
   .first h1{font-size: 25px;}
-  .img-fluid{width: 75px;}
+  .fisrt .img-fluid{width: 75px;}
   .topnav a {display: none;}
   .topnav a.icon {
 	float: right;
