@@ -8,8 +8,97 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="static/style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<title>Alienum</title>
+	<style>
+
+.mySlides {display: none}
+.w3-animate-zoom img {vertical-align: middle;}
+
+/* Slideshow container */
+.mySlides {
+  position: relative;
+  margin: 50px 0px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  width: auto;
+  padding: 10px 300px;
+  color: white;
+  font-size: 50px;
+  border-radius: 0 100px 100px 0;
+  user-select: none;
+  transition: 0.6s ease;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 20px;
+  padding: 40px 12px;
+  position: absolute;
+  top: 240px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 0px 280px;
+  position: absolute;
+  right:0;
+  bottom: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 1024px) {
+  .prev, .next,.text {font-size: 20px}
+  .numbertext {display:none;}
+  .mySlides img{  margin-left: auto;
+  margin-right: auto;
+  width: 250px;}
+  .prev, .next {
+  padding: 10px 40px;
+  font-size: 20px;
+  }
+  .text {
+  font-size: 15px;
+  position: relative;
+  top: 20px;
+}
+}
+</style>
 
 	</HEAD>
 	<BODY onload="startTime()">	
@@ -33,50 +122,67 @@
 			</div>			
 
 			<div class="main">
-				<h1 style="top: 10px;"> Last Five </h1>
+				<h1> Last Five </h1>
+				<br>
 				<div class="gallery">
-					
-					<div class="desc">InfoSecPrep: OSCP</div>
+
+					<div class="mySlides">
+					  <div class="numbertext">1 / 5</div>
   					<a target="_self" href="Vulnhub/OSCP/index.html">
-    					<img src="src/oscp.png"  class="img-fluid" style="width:400px; height: 250px;">
+    					<img src="src/oscp.png" class="w3-animate-zoom">
+						<div class="text">InfoSecPrep: OSCP</div>
   					</a>
+					</div>
 					
-					<br>
-					<br>
-					<div class="desc">sunset: Midnight</div>
-  					<a target="_self" href="Vulnhub/sunset_midnight/index.html">
-    					<img src="src/midnight-02.png"  class="img-fluid" style="width:400px; height: 250px;">
+					<div class="mySlides">
+					  <div class="numbertext">2 / 5</div>
+					  <a target="_self" href="Vulnhub/sunset_midnight/index.html">
+    					<img src="src/midnight-02.png"  class="w3-animate-zoom">
+					  </a> 
+					  <div class="text">sunset: Midnight</div>
+					</div>
+					
+					<div class="mySlides">
+					  <div class="numbertext">3 / 5</div>
+					  <a target="_self" href="Vulnhub/Photographer1/index.html">
+					  <img src="src/Photographer-00.png" class="w3-animate-zoom">
+					  </a>
+					  <div class="text">Photographer: 1</div>
+					</div>
+
+					<div class="mySlides">
+					  <div class="numbertext">4 / 5</div>
+					  <a target="_self" href="Vulnhub/cybersploit/cybersploit2.html">
+    					<img src="src/c2.png"  class="w3-animate-zoom">
   					</a>
+					  <div class="text">CyberSploit: 2</div>
+					</div>
 					
-					<br>
-					<br>
-					<div class="desc">Photographer: 1</div>
-  					<a target="_self" href="Vulnhub/Photographer1/index.html">
-    					<img src="src/Photographer-00.png"  class="img-fluid" style="width:400px; height: 250px;">
-  					</a>
-					
-					
-					<br>
-					<br>
-					<div class="desc">CyberSploit: 2</div>
-  					<a target="_self" href="Vulnhub/cybersploit/cybersploit2.html">
-    					<img src="src/c2.png"  class="img-fluid" style="width:400px; height: 250px;">
-  					</a>
-					
-					<br>
-					<br>
-					<div class="desc">Pwned: 1</div>
-  				    <a target="_self" href="Vulnhub/Pwned/pwned.html">
-    					<img src="src/pw.png" class="img-fluid" style="width:400px; height: 250px;">
-  					</a>
-  					<br>
-					<br>
+
+					<div class="mySlides">
+					  <div class="numbertext">5 / 5</div>
+					  <a target="_self" href="Vulnhub/Pwned/pwned.html">
+    					<img src="src/pw.png" class="w3-animate-zoom">
+  					  </a>
+					  <div class="text">Pwned: 1</div>
+					</div>
 					
 				</div>	
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+				<br>
+
+				<div style="text-align:center">
+				  <span class="dot" onclick="currentSlide(1)"></span> 
+				  <span class="dot" onclick="currentSlide(2)"></span> 
+				  <span class="dot" onclick="currentSlide(3)"></span> 
+				  <span class="dot" onclick="currentSlide(4)"></span> 
+				  <span class="dot" onclick="currentSlide(5)"></span> 
+				</div>
 			</div>		
 			
-			<div class="rsidebar">
-			
+			<div class="rsidebar">			
 				<div class="curinf">
 				<p id="tim"></p>
 				<p id="day"></p>				
@@ -100,6 +206,36 @@
 			<footer class="footer">
 				<p>Designed & Built by <a href="https://twitter.com/5TUK45"> @Stukas</a> | Writeups by <a  href="https://twitter.com/AL1ENUM">@Alienum</a> </p>
 			</footer>
+			
+			<script>
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+			function plusSlides(n) {
+			  showSlides(slideIndex += n);
+			}
+
+			function currentSlide(n) {
+			  showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+			  var i;
+			  var slides = document.getElementsByClassName("mySlides");
+			  var dots = document.getElementsByClassName("dot");
+			  if (n > slides.length) {slideIndex = 1}    
+			  if (n < 1) {slideIndex = slides.length}
+			  for (i = 0; i < slides.length; i++) {
+				  slides[i].style.display = "none";  
+			  }
+			  for (i = 0; i < dots.length; i++) {
+				  dots[i].className = dots[i].className.replace(" active", "");
+			  }
+			  slides[slideIndex-1].style.display = "block";  
+			  dots[slideIndex-1].className += " active";
+			}
+			</script>
+
 			
 			<script src="js/script.js"></script>
 			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
