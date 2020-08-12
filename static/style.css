@@ -237,10 +237,10 @@ body{
   }
   .numbertext {display:none;}
   .next {
-	right: 200px;
+	right: 100px;
 	}
   .prev {
-	left: 100px;
+	left: 80px;
 	}
   .text {
   font-size: 15px;
@@ -277,7 +277,7 @@ body{
 	max-width: 100%;
   }	
   .footer {  
-   position:relative;
+  position:relative;
    bottom:0;
    width: 100%;
   }
@@ -294,15 +294,15 @@ body{
   .numbertext {display:none;}
   .mySlides img{  margin-left: auto;
 	  margin-right: auto;
-	  width: 450px;}
+	  width: 300px;}
   .prev, .next {
 	  padding: 10px 20px;
 	  }
    .next {
-	right: 100px;
+	right: 30px;
 	}
   .prev {
-	left: 100px;
+	left: 30px;
 	}
   .text {
 	  font-size: 15px;
