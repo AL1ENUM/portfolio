@@ -295,17 +295,11 @@ body{
   .mySlides img{  margin-left: auto;
 	  margin-right: auto;
 	  width: 280px;}
-  .prev, .next {
-	  padding: 10px 20px;
-	  }
-   .next {
-	right: 30px;
-	}
-  .prev {
-	left: 30px;
-	}
+  .prev, .next {padding: 10px 20px;}
+   .next { right: 30px;}
+  .prev {left: 30px;}
   .text {
-	  font-size: 10px;
+	  font-size: 5vw;
 	  position: relative;
 	  top: 20px;
 	}
