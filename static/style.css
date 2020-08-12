@@ -299,7 +299,7 @@ body{
    .next { right: 30px;}
   .prev {left: 30px;}
   .text {
-	  font-size: 5vw;
+	  font-size: 15px;
 	  position: relative;
 	  top: 20px;
 	}
