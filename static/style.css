@@ -50,7 +50,7 @@ body{
   margin-right: auto;
 }
 
-h1 {
+.first h1 {
  color:  #aa759f;
  text-align:center;
 }
@@ -105,6 +105,7 @@ h1 {
 }
 
 .footer {
+   position: absolute;
    bottom:0;
    width: 100%;
 }
@@ -115,34 +116,140 @@ h1 {
 }
 
 .footer a{
-	color:  #aa759f;
+	color: #aa759f;
 }
 
 .topnav .icon{
 	display:none;
 }
 
-@media screen and (max-width: 1024px) {
+.mySlides {display: none}
+.w3-animate-zoom img {vertical-align: middle;}
+
+/* Slideshow container */
+.mySlides {
+  position: relative;
+  margin: 50px 0px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  width: 50px;
+  padding: 10px 50px;
+  color: #aa759f;
+  font-size: 50px;
+  border-radius: 0 100px 100px 0;
+  user-select: none;
+  transition: 0.6s ease;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 270px;
+  border-radius: 100px 0 0 100px;
+}
+
+/* Position the "next button" to the right */
+.prev {
+  left: 200px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.5);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 20px;
+  padding: 40px 12px;
+  position: absolute;
+  top: 240px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 0px 280px;
+  position: absolute;
+  right:0;
+  bottom: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.main .about{
+  padding-top: 250px;
+  text-align: center;
+  font-size: 15px;
+ }
+ 
+.main .about h2 {
+  color: #4CAF50;
+  letter-spacing: 3px;
+}
+
+ .main .about a{
+	 color:  #aa759f;
+ }
+ 
+@media screen and (max-width: 1202px) {
   .sidenav{
 	position:relative;
 	top:0;
 	width: 100%;
   }
   .rsidebar{
-	position:relative;
+	position:static;
+	top:40px;
 	bottom: 10px;
 	width: 100%;
   }	
-  .first {font-size: 15px;}
+  .footer {
+   bottom:0;
+   width: 100%;
+}
+  .first {font-size: 20px;}
   .first h1{font-size: 25px;}
-  .fisrt .img-fluid{width: 75px;}
+  .fisrt .img-fluid{width: 95px;}
   .topnav a {display: none;}
   .topnav a.icon {
 	float: right;
 	display: block;
   }
-}
-@media screen and (max-width: 1024px) {
+  .numbertext {display:none;}
+  .next {
+	right: 200px;
+	}
+  .prev {
+	left: 100px;
+	}
+  .text {
+  font-size: 15px;
+  position: relative;
+  top: 20px;
+	}
+  }
+
+@media screen and (max-width: 1202px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
 	position: absolute;
@@ -154,6 +261,67 @@ h1 {
 	display: block;
 	text-align: left;
 	font-size: 15px;
-  }  
+  }
+}  
+  
+  @media screen and (max-width: 700px) {
+
+  .sidenav{
+	position:relative;
+	top:0;
+	max-width: 100%;
+  }
+  .rsidebar{
+	position: static;
+	bottom: 20px;
+	max-width: 100%;
+  }	
+  .footer {  
+   bottom:0;
+   width: 100%;
+  }
+  .first {font-size: 15px;}
+  .first h1{font-size: 25px;}
+  .fisrt .img-fluid{width: 75px;}
+  .topnav a {display: none;}
+  .topnav a.icon {
+	float: right;
+	display: block;
+  }
+  
+  .prev, .next,.text {font-size: 20px}
+  .numbertext {display:none;}
+  .mySlides img{  margin-left: auto;
+	  margin-right: auto;
+	  width: 450px;}
+  .prev, .next {
+	  padding: 10px 20px;
+	  }
+   .next {
+	right: 100px;
+	}
+  .prev {
+	left: 100px;
+	}
+  .text {
+	  font-size: 15px;
+	  position: relative;
+	  top: 20px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+	position: absolute;
+	right: 0;
+	top: 0;
+  }
+  .topnav.responsive a {
+	float: none;
+	display: block;
+	text-align: left;
+	font-size: 15px;
+  } 
 }
   
