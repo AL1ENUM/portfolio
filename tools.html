@@ -5,11 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="static/style.css">	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+	<link rel="stylesheet" type="text/css" href="static/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
 <title>Tools</title>
 <style>
 
@@ -17,6 +15,8 @@ h2 {
   color: #4CAF50;
   text-align: justify;
   letter-spacing: 3px;
+  padding-left: 240px;
+  padding-top: 20px;
 }
 
 .tools li {
@@ -30,16 +30,29 @@ li p{
   color: white;
   font-size: 15px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1202px) {
+	h2 {
+		padding-left: 0px;
+	}
 	.tools li, li p{
 		position: relative;
 		padding:0;
+		font-size: 20px;
+	}
+ }
+ @media screen and (max-width: 700px) {
+	h2 {
+		padding-left: 0px;
+	}
+	.tools li, li p{
+		position: relative;
+		padding:0;
+		font-size: 15px;
 	}
  }
 </style>
 	</HEAD>
 	<BODY onload="startTime()">		
-
 			<div class="sidenav">
 				<div class="first">
 				<img class="img-fluid" src="src/alienaki.jfif" alt="Avatar"/>
